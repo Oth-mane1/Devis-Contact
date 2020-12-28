@@ -1,3 +1,192 @@
+/* * * Basics styles * * */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: auto;
+  width: 800px;
+  background: transparent;
+  padding: 50px 50px;
+  position: relative;
+  top: -230px;
+}
+
+/* * * Header Styles * * */
+.wave {
+  height: 400px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* * * Container Styles * * */
+button {
+  margin: 25px 0;
+  padding: 20px 40px;
+  font-size: 1em;
+  background-color: #000;
+  color: #FFF;
+  border: 2px solid;
+  border-radius: 10px;
+  outline: #09FBD3;
+  transition: border .5s;
+}
+
+button:hover {
+  border: 2px solid #09FBD3;
+}
+
+button:active {
+  background-color: #09FBD3;
+}
+
+/* * * Footer Styles * * */
+.page-foot {
+  width: 100vw;
+  height: 80vh;
+  padding: 50px;
+  color: #FFF;
+  background-color: black;
+}
+
+/* form starting stylings */
+.textBox {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+input[type=text] {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 700px;
+  border: none;
+  border-bottom: 1px solid #757575;
+}
+
+input[type=text]:focus {
+  outline: none;
+}
+
+/* LABEL */
+label {
+  color: #999;
+  font-size: 20px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+
+/* active state */
+input[type=text]:focus~label,
+input[type=text]:valid~label {
+  top: -22px;
+  font-size: 1.2em;
+  color: #09FBD3;
+}
+
+
+/* BOTTOM BARS */
+.bar {
+  position: relative;
+  display: block;
+  width: 700px;
+}
+
+.bar:before,
+.bar:after {
+  content: '';
+  height: 3px;
+  width: 0;
+  bottom: 0px;
+  position: absolute;
+  background: #09FBD3;
+  transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+input[type=text]:focus~.bar:before,
+input[type=text]:focus~.bar:after {
+  width: 50%;
+}
+
+/********** Large devices only **********/
+@media (min-width: 1200px) {
+  .wave {
+    position: relative;
+    height: 400px;
+    width: 120vw;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+  }
+}
+
+/********** Medium devices only **********/
+@media (max-width: 992px) {
+
+  .wave {
+    position: relative;
+    height: 400px;
+    width: 140vw;
+    overflow: hidden;
+    z-index: -1;
+    top: 0;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 600px;
+  }
+
+  input[type=text] {
+    width: 600px;
+  }
+
+  .container {
+    width: 700px;
+  }
+}
+
+/********** Small devices only **********/
+@media (max-width: 768px) {
+  .wave {
+    width: 160vw;
+  }
+
+  .bar {
+    position: relative;
+    display: block;
+    width: 500px;
+  }
+
+  input[type=text] {
+    width: 500px;
+  }
+
+  .container {
+    width: 600px;
+  }
+}
+
 /* * * Custom Scroll bar * * */
 
 /* width */
@@ -20,118 +209,4 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
-}
-
-/* * * Basics styles * * */
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
-.container {
-  background-color: white;
-  width: 100%;
-}
-
-/* * * Header Styles * * */
-
-
-/* * * Footer Styles * * */
-.page-foot {
-  width: 100vw;
-  height: 80vh;
-  padding: 50px;
-  color: #FFF;
-  background-color: black;
-}
-
-/* * * Main style * * */
-
-/* basic stylings */
-.container {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  width: 400px;
-  margin: 30px auto;
-  display: block;
-  background: #FFF;
-  padding: 10px 50px 50px;
-}
-
-/* form starting stylings */
-.group {
-  position: relative;
-  margin-bottom: 45px;
-}
-
-input {
-  font-size: 18px;
-  padding: 10px 10px 10px 5px;
-  display: block;
-  width: 300px;
-  border: none;
-  border-bottom: 1px solid #757575;
-}
-
-input:focus {
-  outline: none;
-}
-
-/* LABEL */
-label {
-  color: #999;
-  font-size: 18px;
-  font-weight: normal;
-  position: absolute;
-  pointer-events: none;
-  left: 5px;
-  top: 10px;
-  transition: 0.2s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-/* active state */
-input:focus~label,
-input:valid~label {
-  top: -20px;
-  font-size: 14px;
-  color: rgb(39, 39, 39);
-}
-
-/* BOTTOM BARS */
-.bar {
-  position: relative;
-  display: block;
-  width: 300px;
-}
-
-.bar:before,
-.bar:after {
-  content: '';
-  height: 2px;
-  width: 0;
-  bottom: 0px;
-  position: absolute;
-  background: #09FBD3;
-  transition: 0.5s ease all;
-  -moz-transition: 0.2s ease all;
-  -webkit-transition: 0.2s ease all;
-}
-
-.bar:before {
-  left: 50%;
-}
-
-.bar:after {
-  right: 50%;
-}
-
-/* active state */
-input:focus~.bar:before,
-input:focus~.bar:after {
-  width: 50%;
 }
